@@ -12,3 +12,16 @@ ul{
     text-decoration: none;
   }
 }
+
+html{
+  &::-webkit-scrollbar {  
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom,#b100f7,#c13ff5, #c777e7);
+    border-radius: 10px;
+  }
+}
