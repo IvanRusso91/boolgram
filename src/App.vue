@@ -93,7 +93,7 @@ export default {
         li{
           margin-right: 20px;
           a i{
-            color: black;
+            color: #b100f7;
           }
           a img{
             width: 40px;
