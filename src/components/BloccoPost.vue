@@ -1,0 +1,184 @@
+<template>
+  <div class="box-post">
+    <div class="user-post d-flex">
+      <!-- Parte più alta del post con dentro le info dell'utente che pubblica -->
+      <div class="header-post d-flex">
+
+        <section class="icona">
+          <img :src="posts.profile_picture" :alt="posts.profile_name">
+        </section>
+
+        <section class="testo">
+          <h6>{{posts.profile_name}}</h6>
+          <p>{{posts.date.date}}</p>
+        </section>
+
+      </div>
+      <!-- /Parte più alta del post con dentro le info dell'utente che pubblica -->
+
+      <div class="post">
+        <!-- Img del post con annesso testo e 2 icone  -->
+        <section class="p-img">
+          <img :src="posts.post_image" :alt="posts.profile_name">
+        </section>
+
+        <section class="p-test">
+          <h5>
+          <i class="fa-solid fa-heart"></i>
+          <i class="fa-regular fa-comment"></i>{{posts.post_text}}</h5>         
+        </section>
+        <!-- /Img del post con annesso testo e 2 icone  -->
+        
+        <!-- sezione Like -->
+        <section>
+          <div class="d-flex like" v-for="item in posts.likes" :key="`a:${item}`">
+            <div class="user">
+              <img :src="item.profile_picture" :alt="item.username">
+            </div>
+            <p>piace a <strong>{{item.username}}</strong> </p> 
+          </div>
+        </section>
+        <!-- /sezione Like -->
+        
+        <!-- sezione commenti -->
+        <section>
+          <h5>Commenti :</h5>
+          <ul>
+            <li 
+              class="d-flex commenti"
+              v-for="item in posts.comments" 
+              :key="`a:${item}`">
+
+              <h6>{{item.username}} :</h6> 
+              <span>{{item.text}}</span>
+            </li>
+          </ul>
+          
+        <div v-if="posts.comments.length> 3 " >
+          <button class="btn loadMore" @click= "loadMore" >load more</button>
+        </div>
+        <div class="non" v-else>
+          <h6>non ci sono più post</h6>
+        </div>
+        </section>
+        <!-- /sezione commenti -->
+
+
+      </div>
+
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name : 'BloccoPost',
+  props:{
+    posts: Object,
+  },
+  data() {
+    return {
+      
+    }
+  },
+  
+};
+
+</script>
+
+<style lang="scss" scoped>
+@import '../assets/style/mixin';
+
+  .box-post{
+      margin-top: 50px;
+      margin-bottom: 50px;
+      border: 1px solid rgb(192, 192, 192);
+      background-color: white;
+      .user-post{
+        padding: 20px 0 10px 0;
+        flex-direction:column;
+        margin-bottom: 50px;
+        
+        .header-post{
+          padding-left: 10px;
+          .icona{  
+            img{
+              border: 2px solid rgb(156, 11, 144);
+              padding: 2px;
+              width: 55px;
+              height: 55px;
+              border-radius: 50%;
+            }
+          }
+          .testo{
+            margin: 10px 0 0 10px;
+            p{
+              margin-top: -10px;
+              font-size: 0.8em;
+              color: rgb(199, 199, 199);
+            }
+          }
+        }
+        .post{
+          
+          .p-img img{
+            width: 100%;
+          }
+          .p-test{
+            margin: 20px 0 20px 0px;
+
+            .fa-heart,
+            .fa-comment{
+              font-size: 1.5em;
+              margin-right: 10px;
+              color: #b100f7; 
+            }
+          }
+          .like{
+            p{
+              margin: 0px 0 0 10px;
+            }
+            
+          }
+          .user{
+            margin: 0px 0 10px 20px;
+            img{
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+            }
+          }
+          h5{
+            margin-left: 20px;
+          }
+          .commenti{
+            span{
+            margin-left: 10px;
+            font-size: 0.8em;
+            }
+          }
+            .non{
+              width: 160px;
+              padding: 6px;
+              border-radius: 10px;
+              margin-left: 20px;
+              color: white;
+              background: linear-gradient(to right,#b100f7,#c13ff5, #c777e7);
+            }
+          .btn{
+            margin-left: 20px;
+            background: linear-gradient(to right,#b100f7,#c13ff5, #c777e7);
+            color: white;
+            width: 100px;
+            flex-shrink: 0;
+            transition: ease-out 0.5s;
+            outline: none;
+            cursor: pointer;
+            &:hover{
+              box-shadow: inset 100px 0 0 0 #b100f7;
+            }
+          }
+        }       
+      }
+    }
+</style>
