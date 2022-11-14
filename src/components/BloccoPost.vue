@@ -31,11 +31,12 @@
         
         <!-- sezione Like -->
         <section>
-          <div class="d-flex like" v-for="item in posts.likes" :key="`a:${item}`">
+          <div class="d-flex like" v-for="item in posts.likes.slice(0,1)" :key="`a:${item}`">
             <div class="user">
               <img :src="item.profile_picture" :alt="item.username">
             </div>
-            <p>piace a <strong>{{item.username}}</strong> </p> 
+            <p>Piace <strong>{{item.username}}</strong> e <strong>{{posts.likes.length}}</strong> altri </p>
+
           </div>
         </section>
         <!-- /sezione Like -->
