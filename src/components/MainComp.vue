@@ -51,7 +51,7 @@
         <BloccoSuggerimenti 
          :user= 'user' 
           v-for="(user, index) in userArray" :key="`a-${index}`"/>
-
+        
         <FooterComp />
       </div>
     </div>
@@ -179,10 +179,7 @@ export default {
     .box-profilo{
       margin-top: 50px;
       width: 100%;
-      overflow-x: hidden;
-      &::-webkit-scrollbar {  
-          display: none;
-        }
+      
     }
   }
 }

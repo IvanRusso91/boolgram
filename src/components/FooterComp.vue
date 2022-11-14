@@ -13,6 +13,7 @@ export default {
 <style lang="scss" scoped>
 
   footer{
+    margin-top: -20px;
     span{
       text-transform: uppercase;
       margin-left: 30px;
