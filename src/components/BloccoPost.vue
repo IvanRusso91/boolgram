@@ -46,7 +46,7 @@
           <ul>
             <li 
               class="d-flex commenti"
-              v-for="item in posts.comments" 
+              v-for="item in posts.comments.slice(0,nCommenti)" 
               :key="`a:${item}`">
 
               <h6>{{item.username}} :</h6> 
@@ -54,8 +54,8 @@
             </li>
           </ul>
           
-        <div v-if="posts.comments.length> 3 " >
-          <button class="btn loadMore" @click= "loadMore" >load more</button>
+        <div v-if="posts.comments.length> nCommenti  " >
+          <button class="btn loadMore" @click= "loadMore(posts)" >load more</button>
         </div>
         <div class="non" v-else>
           <h6>non ci sono più post</h6>
@@ -78,10 +78,14 @@ export default {
   },
   data() {
     return {
-      
+      nCommenti : 3,
     }
   },
-  
+  methods:{
+    loadMore(posts){
+      this.nCommenti = posts.comments.length;
+    }
+  }
 };
 
 </script>
