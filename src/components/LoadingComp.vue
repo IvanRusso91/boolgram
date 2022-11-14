@@ -1,7 +1,5 @@
 <template>
   <div class="box d-flex">
-
-
     <div class="box-left d-flex">
 
       <!-- Storie -->
@@ -63,13 +61,13 @@ export default {
 @import '../assets/style/mixin';
 
 .box{
-  padding-bottom: 85px;
+  // padding-bottom: 85px;
   .box-left{
     width: 780px;
     flex-direction: column;
     .box-storie{
       border: 1px solid rgb(192, 192, 192);
-      margin-top: 50px;
+      margin-top: -20px;
       background-color: white;
       .bs{
         padding: 20px 0 20px 20px;

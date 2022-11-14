@@ -132,7 +132,8 @@ export default {
 
 @import '../assets/style/mixin';
 
-.box{ 
+.box{
+  margin-top: 77px; 
   .box-left{
     width: 65%;
     flex-direction: column;
@@ -162,7 +163,10 @@ export default {
   }
   .box-right{
     display: flex;
-    // width: 35%;
+    position: fixed;
+    left: 60%;
+    width: 25%;
+    
     .suggeriti{
       display: flex;
       justify-content: space-between;
@@ -175,6 +179,10 @@ export default {
     .box-profilo{
       margin-top: 50px;
       width: 100%;
+      overflow-x: hidden;
+      &::-webkit-scrollbar {  
+          display: none;
+        }
     }
   }
 }
@@ -185,6 +193,14 @@ export default {
       
       .mt{
         display: none;
+      }
+    
+  }
+
+  @media screen and (min-width: 992px) and (max-width: 1800px) {
+      
+      .box-profilo{
+        margin-left: 30px;
       }
     
   }

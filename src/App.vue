@@ -65,10 +65,16 @@ export default {
 @import './assets/style/_mixin.scss';
 
 .box{
-  border-bottom: 1px solid rgb(192, 192, 192);
   .box-head{
+    border-bottom: 1px solid rgb(192, 192, 192);
+    position: fixed ;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
     justify-content: space-between;
     padding: 20px 0 0 0 ;
+    background-color: white;
     .logo img{
       margin: 0 20px 0 20px;
       width: 100px;
