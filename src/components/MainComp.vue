@@ -132,7 +132,7 @@ export default {
 
 @import '../assets/style/mixin';
 
-.box{
+.box{ 
   .box-left{
     width: 65%;
     flex-direction: column;

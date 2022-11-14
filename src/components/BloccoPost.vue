@@ -24,7 +24,7 @@
 
         <section class="p-test">
           <h5>
-          <i class="fa-solid fa-heart"></i>
+          <i class="fa-regular fa-heart"></i>
           <i class="fa-regular fa-comment"></i>{{posts.post_text}}</h5>         
         </section>
         <!-- /Img del post con annesso testo e 2 icone  -->
@@ -101,6 +101,7 @@ export default {
         
         .header-post{
           padding-left: 10px;
+          margin-bottom:10px;
           .icona{  
             img{
               border: 2px solid rgb(156, 11, 144);
