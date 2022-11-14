@@ -54,12 +54,16 @@
             </li>
           </ul>
           
-        <div v-if="posts.comments.length> nCommenti  " >
+        <div v-if="posts.comments.length > nCommenti  " >
           <button class="btn loadMore" @click= "loadMore(posts)" >load more</button>
+        </div>      
+
+        <div v-else-if="posts.comments.length <= i "></div>
+
+        <div v-else>
+          <button class="btn loadMore" @click= "loadLess()" >load less</button>
         </div>
-        <div class="non" v-else>
-          <h6>non ci sono più post</h6>
-        </div>
+
         </section>
         <!-- /sezione commenti -->
 
@@ -79,12 +83,18 @@ export default {
   data() {
     return {
       nCommenti : 3,
+      i : 3,
     }
   },
   methods:{
+
     loadMore(posts){
       this.nCommenti = posts.comments.length;
-    }
+    },
+
+    loadLess(){
+      this.nCommenti =  this.i ;
+    },
   }
 };
 
@@ -162,14 +172,6 @@ export default {
             font-size: 0.8em;
             }
           }
-            .non{
-              width: 160px;
-              padding: 6px;
-              border-radius: 10px;
-              margin-left: 20px;
-              color: white;
-              background: linear-gradient(to right,#b100f7,#c13ff5, #c777e7);
-            }
           .btn{
             margin-left: 20px;
             background: linear-gradient(to right,#b100f7,#c13ff5, #c777e7);
