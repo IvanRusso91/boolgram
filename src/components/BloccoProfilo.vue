@@ -1,6 +1,6 @@
 <template>
   <div class="bordo">
-    <div class="profile">
+    <div class="profile d-flex">
 
       <div class="user">
         <img src="../assets/img/profile.jpg" alt="profile">
@@ -32,7 +32,6 @@ export default {
   .bordo{
     margin-left: 30px;
     .profile{
-      display: flex;
       justify-content: space-between;
       margin-top: 15px;
       .user img{

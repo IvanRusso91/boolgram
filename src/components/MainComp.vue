@@ -47,11 +47,11 @@
     <!-- /loading.. -->
 
     <!-- Blocco di destra con profilo, suggerimenti e Footer -->
-    <div v-else class="container-fluid box-right">
+    <div v-else class="container-fluid box-right d-flex">
       <div  class=" box-profilo">
         <BloccoProfilo />
 
-        <div class="suggeriti">
+        <div class="suggeriti d-flex">
           <h6 class="sug-left">Suggeriti per te</h6>
           <h6 class="mt">Mostra tutti</h6>
         </div>
@@ -185,13 +185,11 @@ export default {
     }    
   }
   .box-right{
-    display: flex;
     position: fixed;
     left: 60%;
     width: 25%;
     
     .suggeriti{
-      display: flex;
       justify-content: space-between;
       margin: 80px 0  20px 30px;
       .sug-left{

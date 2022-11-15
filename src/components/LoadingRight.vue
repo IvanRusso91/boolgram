@@ -2,7 +2,7 @@
   <div class="container-fluid box-right">
       <div  class=" box-profilo">
         <div class="bordo">
-          <section class="profile">
+          <section class="profile d-flex">
 
             <div class="user">
               <img src="../assets/img/profile.jpg" alt="profile">
@@ -20,12 +20,12 @@
       
         </div>
 
-        <div class="suggeriti">
+        <div class="suggeriti d-flex">
           <h6 class="sug-left">Suggeriti per te</h6>
           <h6>Mostra tutti</h6>
         </div>
 
-        <section class="user">
+        <section class="user d-flex">
           <div class="icona">
             <div class="testo">
               <div class="bt" ></div>
@@ -100,7 +100,6 @@ export default {
       width: 430px;
       margin-top: 50px;
       .suggeriti{
-        display: flex;
         justify-content: space-between;
         margin: 80px 0  20px 0px;
         .sug-left{
@@ -110,7 +109,6 @@ export default {
       .bordo{
         
         .profile{
-          display: flex;
           justify-content: space-between;
           margin-top: 15px;
           .user img{
@@ -129,7 +127,6 @@ export default {
         }
       }
       .user{
-        display: flex;
         flex-direction: column;
         .icona{ 
           margin-bottom: 20px; 
@@ -159,4 +156,6 @@ export default {
       } 
     }
   }
+
+  
 </style>

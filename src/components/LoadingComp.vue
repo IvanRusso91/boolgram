@@ -12,7 +12,7 @@
         <!-- /loading.. -->
           
         <div class="bs d-flex">
-          <section class="story-users">
+          <section class="story-users d-flex">
             <div class="icona"></div>
             <div class="icona"></div>
             <div class="icona"></div>
@@ -61,7 +61,6 @@ export default {
 @import '../assets/style/mixin';
 
 .box{
-  // padding-bottom: 85px;
   .box-left{
     width: 780px;
     flex-direction: column;
@@ -70,11 +69,11 @@ export default {
       margin-top: -20px;
       background-color: white;
       .bs{
+        overflow-x: hidden;
         padding: 20px 0 20px 20px;
         .story-users{
           margin-right: 35px;
           text-align: center;
-            display: flex;
           .icona{
             margin-right: 20px;
             @include user
@@ -120,5 +119,53 @@ export default {
     }    
   } 
 }
+
+// MQ
+
+  @media screen and (min-width:1200px) and (max-width: 1399px) {
+
+      .box{
+        .box-left{
+          width: 680px;
+        }
+      }
+    
+  }
+
+   @media screen and (min-width:992px) and (max-width: 1199px) {
+
+    .box{
+      .box-left{
+        width: 580px;
+      }
+    }
+  }
+
+  @media screen and (min-width:768px) and (max-width: 991px) {
+
+    .box{
+      .box-left{
+        width: 420px;
+      }
+    }
+  }
+
+  @media screen and (min-width:768px) and (max-width: 991px) {
+
+    .box{
+      .box-left{
+        width: 420px;
+      }
+    }
+  }
+
+  @media screen and (min-width:500px) and (max-width: 767px) {
+
+    .box{
+      .box-left{
+        width: 280px;
+      }
+    }
+  }
 
 </style>
