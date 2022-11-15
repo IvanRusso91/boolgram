@@ -45,13 +45,13 @@
         <section>
           
           <div v-if="posts.comments.length > nCommenti  " >
-            <button class="btn loadMore" @click= "loadMore(posts)" >mostra tutti e {{posts.comments.length}} i commenti <i class="fa-solid fa-arrow-down"></i></button>
+            <button class="btn loadMore" @click= "loadMore(posts)" >Mostra tutti e {{posts.comments.length}} i commenti <i class="fa-solid fa-arrow-down"></i></button>
           </div>      
 
           <div v-else-if="posts.comments.length <= i "></div>
 
           <div v-else>
-            <button class="btn loadMore" @click= "loadLess()" >Carica meno commenti <i class="fa-solid fa-arrow-up"></i></button>
+            <button class="btn loadMore" @click= "loadLess()" >Mostra meno commenti <i class="fa-solid fa-arrow-up"></i></button>
           </div>
           <ul>
             <li 
