@@ -1,6 +1,6 @@
 <template>
   <div class="box-post">
-    <div class="user-post d-flex">
+    <div  class="user-post d-flex">
       <!-- Parte più alta del post con dentro le info dell'utente che pubblica -->
       <div class="header-post d-flex">
 
@@ -43,7 +43,16 @@
         
         <!-- sezione commenti -->
         <section>
-          <h5>Commenti :</h5>
+          
+          <div v-if="posts.comments.length > nCommenti  " >
+            <button class="btn loadMore" @click= "loadMore(posts)" >mostra tutti e {{posts.comments.length}} i commenti <i class="fa-solid fa-arrow-down"></i></button>
+          </div>      
+
+          <div v-else-if="posts.comments.length <= i "></div>
+
+          <div v-else>
+            <button class="btn loadMore" @click= "loadLess()" >Carica meno commenti <i class="fa-solid fa-arrow-up"></i></button>
+          </div>
           <ul>
             <li 
               class="d-flex commenti"
@@ -55,15 +64,7 @@
             </li>
           </ul>
           
-        <div v-if="posts.comments.length > nCommenti  " >
-          <button class="btn loadMore" @click= "loadMore(posts)" >load more</button>
-        </div>      
-
-        <div v-else-if="posts.comments.length <= i "></div>
-
-        <div v-else>
-          <button class="btn loadMore" @click= "loadLess()" >load less</button>
-        </div>
+        
 
         </section>
         <!-- /sezione commenti -->
@@ -87,6 +88,7 @@ export default {
       i : 3,
     }
   },
+
   methods:{
 
     loadMore(posts){
@@ -96,6 +98,7 @@ export default {
     loadLess(){
       this.nCommenti =  this.i ;
     },
+
   }
 };
 
@@ -174,17 +177,11 @@ export default {
             }
           }
           .btn{
-            margin-left: 20px;
-            background: linear-gradient(to right,#b100f7,#c13ff5, #c777e7);
-            color: white;
-            width: 100px;
-            flex-shrink: 0;
-            transition: ease-out 0.5s;
+            margin-left: 20px;        
             outline: none;
+            color: rgb(172, 172, 172);
+            font-size: 1.2em;
             cursor: pointer;
-            &:hover{
-              box-shadow: inset 100px 0 0 0 #b100f7;
-            }
           }
         }       
       }

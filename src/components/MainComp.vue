@@ -27,7 +27,15 @@
       <div class="box-post ">
         <BloccoPost 
         :posts= 'posts'
-        v-for="(posts, index) in postArray" :key="`b-${index}`"/>
+        v-for="(posts, index) in postArray.slice(0,nPost)" :key="`b-${index}`"/>
+      </div>
+
+      <div  class="loadMore" v-if="postArray.length > nPost  " >
+        <button class="btn " @click= "loadMore()" >Load More <i class="fa-solid fa-arrow-down"></i></button>
+      </div>
+
+      <div class="loadMore" v-else>
+        <button class="btn " @click= "loadLess(post)" >Load Less <i class="fa-solid fa-arrow-up"></i></button>
       </div>
       <!-- /Post -->
 
@@ -94,8 +102,9 @@ export default {
       posts : '',
 
       isLoading: true,
-      
-      
+      nPost: 2,
+      i:2,
+       
     }
   },
 
@@ -122,7 +131,16 @@ export default {
         this.postArray = e.data;
         
       })
-    }
+    },
+
+    // serve a caricare più post
+    loadMore(){
+     this.nPost += this.i;
+    },
+    
+    loadLess(){
+      this.nPost -= (this.postArray.length - 2) ;
+    },
   }
 }
 
@@ -137,6 +155,10 @@ export default {
   .box-left{
     width: 65%;
     flex-direction: column;
+    .loadMore{
+      text-align: center;
+      margin-top: -20px;
+    }  
     .box-storie{
       border: 1px solid rgb(192, 192, 192);
       margin-top: 50px;
@@ -158,7 +180,8 @@ export default {
       .loading{
         text-align: center;
         margin-top: 20px;
-      }   
+      }
+       
     }    
   }
   .box-right{
@@ -181,6 +204,7 @@ export default {
       width: 100%;
       
     }
+    
   }
 }
 
